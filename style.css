@@ -1,0 +1,85 @@
+*{
+    margin: 0px;
+    padding: 0px;
+   
+   }
+   body{
+     background-color: #80d41f;
+     font-family: 'Dancing Script', cursive;
+   }
+   h1{
+     text-align: center;
+     margin-top: 20px;      /*Utilizamos margin para declarar el espacio que queremos de margen tanto en la zona superior como en la inferior*/
+     margin-bottom: 20px;        
+     color:white;
+     font-size: 80px;
+   }
+   .contenedor-galeria{ /*El espacio reservado para el contenedor donde se mostrarán las imagenes*/
+     width: 800px;
+     height: 320px;
+     overflow: hidden;
+     margin:50px auto;
+    box-shadow: 0 0 10px 1px rgba(0,0,0,0.35);
+   }
+   .contenedor-galeria li{ 
+     position: relative;
+     display: block;
+     width: 160px;
+     float: left;
+     box-shadow: 0 0 25px 10px rgba(0,0,0,0.5 );
+     transition: all 0.5s;
+   }
+   .contenedor-galeria ul:hover li{ /*Hacemos el hover sobre todas las listas*/
+     width: 40px;
+     filter: brightness(50%); 
+   }
+   .contenedor-galeria ul li:hover{ /*Hacemos el hover sobre una única lista*/
+     width: 640px;
+     filter: brightness(100%);
+   }
+   .contenedor-galeria li img{
+     display: block;
+     width: 640px;
+     height: 100%;
+   }
+   .titulo-imagen{
+     background: rgb(0,0,0,0.8);
+     position: absolute;
+     top: 100%;
+     width: 100%;
+     display: block;
+     transition: all 0.5s ease; 
+     background-size: 400% 400%;
+   }
+   @keyframes cambia-color{ /* Nos permite a los autores controlar los pasos intermededios, también se les conoce como punto de trayectoria*/
+     0%{
+       background-position: 0%, 50%;
+     }
+     50%{
+        background-position: 100%, 50%;
+     }
+     100%{
+        background-position: 0%, 100%;
+     }
+   }
+   .titulo-imagen a{ /*Pone texto encima de una imagen*/
+     display:block;
+     color:white;
+     text-decoration: none;
+     text-align: center;
+     padding: 20px;
+     font-size: 20px;
+     text-shadow: 0 1px 2px black;
+     transition: all 0.5s ease;
+   }
+   .contenedor-galeria ul li:hover .titulo-imagen{ /*Muestra texto sobre una imagen*/
+     top:0%;
+     box-shadow: 0 0 25px 10px rgba(0,0,0,0.5);
+   }
+   .titulo-imagen:hover a{ /* Realiza transicion de mas a menos con el 'ease' de forma que la transición no sea brusca*/
+     transform: scale(1.1);
+     transition: all 0.5s ease;
+   }
+   .titulo-imagen:active{ /* Active representa un elemento como si fuese un botón el cual está activando el usuario*/
+     background: rgba(10, 223, 38, 0.5); 
+   }
